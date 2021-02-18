@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
 import '../helpers';
+import { expect } from 'chai';
 
 describe('Routes: Products', () => {
   const defaultProduct = {
