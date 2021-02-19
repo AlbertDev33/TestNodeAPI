@@ -2,6 +2,16 @@ import '../helpers';
 import { expect } from 'chai';
 
 describe('Routes: Products', () => {
+  let request;
+  let app;
+
+  before(async () => {
+    app = await setupApp();
+    request = supertest(app);
+  });
+
+  after(() => app.database.close());
+
   const defaultProduct = {
     name: 'Default product',
     description: 'product description',
